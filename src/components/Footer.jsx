@@ -3,7 +3,7 @@ import { logo } from "../assets";
 import { footerLinks, socialMedia } from "../constants";
 
 const Footer = () => (
-  <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
+  <footer className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
     <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
       <div className="flex-1 flex flex-col justify-start mr-10">
         <img
@@ -46,13 +46,22 @@ const Footer = () => (
         Copyright &copy; {new Date().getFullYear()} HooBank. All Rights
         Reserved.
       </p>
-      <div className="flex flex-row md:mt-0 mt-6">
-        {socialMedia.map((social, index) => (
-          <img key={social.id} src={social.icon} alt={social.id} className={`w-[21px] h-[21px] object-contain cursor-pointer ${index !== socialMedia.length -1 ? 'mr-6' : 'mr-0'}`} />
+      <div className="flex flex-row md:mt-0 mt-6 gap-6">
+        {socialMedia.map((social) => (
+          <div className="flex">
+            <a href={social.link}>
+              <img
+                key={social.id}
+                src={social.icon}
+                alt={social.id}
+                className={`w-[21px] h-[21px] object-contain cursor-pointer`}
+              />
+            </a>
+          </div>
         ))}
       </div>
     </div>
-  </section>
+  </footer>
 );
 
 export default Footer;
