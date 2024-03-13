@@ -12,7 +12,7 @@ const Clients = () => (
           <img
             src={client.logo}
             alt="client"
-            className="sm:max-w-[192px] w-100px object-contain"
+            className="sm:max-w-[192px] w-100px object-contain hover:invert"
           />
         </div>
       ))}
