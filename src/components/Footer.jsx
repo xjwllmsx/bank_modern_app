@@ -1,6 +1,7 @@
 import styles from "../style";
 import { logo } from "../assets";
 import { footerLinks, socialMedia } from "../constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => (
   <footer className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
@@ -50,11 +51,11 @@ const Footer = () => (
         {socialMedia.map((social) => (
           <div className="flex">
             <a href={social.link}>
-              <img
+              <FontAwesomeIcon
                 key={social.id}
-                src={social.icon}
+                icon={social.icon}
                 alt={social.id}
-                className={`w-[21px] h-[21px] object-contain cursor-pointer`}
+                className="w-[21px] h-[21px] text-white hover:text-secondary object-contain"
               />
             </a>
           </div>
